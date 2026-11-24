@@ -1,0 +1,5 @@
+.env
+data/engine.db
+out/
+__pycache__/
+*.pyc

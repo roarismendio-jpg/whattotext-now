@@ -1,0 +1,1290 @@
+[
+ {
+  "id": "b2r01",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "text_to_send_when",
+  "hook": "the text to send when you're always the one who plans",
+  "contact": "the group",
+  "context": [
+   {
+    "from": "them",
+    "name": "jess",
+    "text": "we should all hang out soon!!",
+    "stamp": "Today 7:48 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "lol i always end up"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 19
+   },
+   {
+    "t": "ok i'm putting it on the calendar: saturday, 7pm, my place. everyone brings one thing."
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "t": " reply with what you're bringing"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "'we should hang out soon' is where plans go to die. a day and a time is the whole trick.\n\nsend this to the group chat's designated planner.\n\n#friendship #collegelife #20s"
+ },
+ {
+  "id": "b2r02",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "what_to_text_back",
+  "hook": "what to text your friend right after their breakup",
+  "contact": "nia",
+  "context": [
+   {
+    "from": "them",
+    "text": "we broke up. i'm fine i guess",
+    "stamp": "Today 10:12 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "omg he was never good enough for"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 32
+   },
+   {
+    "t": "i'm so sorry. you don't have to be fine."
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "t": " want me to come over tonight with snacks and zero opinions?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "trashing the ex feels supportive. it isn't, especially if they get back together. show up, don't commentate.\n\n#friendship #breakup #20s"
+ },
+ {
+  "id": "b2r03",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "text_to_send_when",
+  "not_before": "2026-12-14",
+  "not_after": "2027-01-04",
+  "hook": "the text to send when you're staying on campus over break",
+  "contact": "dev",
+  "context": [],
+  "script": [
+   {
+    "t": "this might be dramatic but"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 26
+   },
+   {
+    "t": "hey, i'm staying on campus over break and it's pretty quiet here."
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "t": " any chance you're around for a call this week?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "lots of people stay. say it out loud and someone usually says 'me too.'\n\nsend this to someone who's staying too.\n\n#winterbreak #collegelife #loneliness"
+ },
+ {
+  "id": "b2t01",
+  "format": "thread_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "story_thread",
+  "hook": "how a friendship comes back, in 4 texts",
+  "contact": "kayla",
+  "context": [
+   {
+    "from": "them",
+    "text": "happy birthday!! miss u",
+    "stamp": "Mar 3"
+   }
+  ],
+  "script": [
+   {
+    "stamp": "Today 8:02 PM"
+   },
+   {
+    "t": "saw a song from junior year on my spotify and thought of you."
+   },
+   {
+    "p": 0.4
+   },
+   {
+    "t": " how are you actually doing?"
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "send": true
+   },
+   {
+    "them": "OMG i was literally just thinking about you"
+   },
+   {
+    "them": "i'm ok. kind of a weird semester tbh"
+   },
+   {
+    "t": "same honestly. coffee when we're both home for break?"
+   },
+   {
+    "p": 0.4
+   },
+   {
+    "send": true
+   },
+   {
+    "them": "yes. i've missed you"
+   }
+  ],
+  "caption": "it took one random text. that's it. that's the post.\n\nwho's your 'saw a song and thought of you' person?\n\n#friendship #nostalgia #20s"
+ },
+ {
+  "id": "b2t02",
+  "format": "thread_reel",
+  "cluster": "Getting help",
+  "hook_pattern": "story_thread",
+  "hook": "what checking in on a quiet friend actually looks like",
+  "contact": "theo",
+  "context": [],
+  "script": [
+   {
+    "stamp": "Monday 9:20 PM"
+   },
+   {
+    "t": "no need to reply, just thinking of you this week"
+   },
+   {
+    "p": 0.4
+   },
+   {
+    "send": true
+   },
+   {
+    "stamp": "Wednesday 11:47 PM"
+   },
+   {
+    "them": "sorry i went quiet. finals have been rough honestly"
+   },
+   {
+    "t": "no sorry needed."
+   },
+   {
+    "p": 0.4
+   },
+   {
+    "t": " want to study at the library tomorrow? i'll bring coffee"
+   },
+   {
+    "p": 0.4
+   },
+   {
+    "send": true
+   },
+   {
+    "them": "yeah. thank you for checking"
+   }
+  ],
+  "caption": "most people don't answer the first check-in. the first one is what makes the second one easy.\n\n#friendship #finalsweek #mentalhealthawareness"
+ },
+ {
+  "id": "b2r04",
+  "format": "typing_reel",
+  "cluster": "Home & family",
+  "hook_pattern": "how_to",
+  "not_before": "2026-12-10",
+  "not_after": "2027-01-02",
+  "hook": "how to ask your parents for a little space over break",
+  "contact": "dad",
+  "context": [
+   {
+    "from": "them",
+    "text": "big week!! uncle joe's tuesday, church thursday, the lake saturday",
+    "stamp": "Today 9:03 AM"
+   }
+  ],
+  "script": [
+   {
+    "t": "do we have to do all"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 20
+   },
+   {
+    "t": "love that. could i skip the lake and keep saturday for myself?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "t": " still recovering from finals and i want to actually enjoy the rest of the week"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "say yes to most, ask for one. it works way better than fighting the whole schedule.\n\n#winterbreak #family #collegelife"
+ },
+ {
+  "id": "b2r05",
+  "format": "typing_reel",
+  "cluster": "Money",
+  "hook_pattern": "how_to",
+  "hook": "how to split bills with a roommate without it getting weird",
+  "contact": "roommate",
+  "context": [],
+  "script": [
+   {
+    "t": "hey so um"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 9
+   },
+   {
+    "t": "hey! electric + wifi came to $142 this month, so $71 each."
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " i'll send a venmo request so it's easy"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "exact number, one line, request link. money talk is only awkward when it's vague.\n\n#roommates #moneytips #20s"
+ },
+ {
+  "id": "b2r06",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "how_to_say_no",
+  "hook": "how to say no to a second date without ghosting",
+  "contact": "sam",
+  "context": [
+   {
+    "from": "them",
+    "text": "had fun last night! dinner this week?",
+    "stamp": "Today 12:30 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "omg this week is so busy"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 24
+   },
+   {
+    "t": "that's really sweet of you. i had a good time but i'm not feeling a romantic connection."
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "t": " didn't want to leave you hanging"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "'so busy' just means they'll ask again next week. kind and clear takes 20 seconds.\n\n#dating #communication #20s"
+ },
+ {
+  "id": "b2r07",
+  "format": "typing_reel",
+  "cluster": "School stress & procrastination",
+  "hook_pattern": "text_to_send_when",
+  "hook": "the text to send when one bad grade has you spiraling",
+  "contact": "maya",
+  "context": [],
+  "script": [
+   {
+    "t": "i'm literally going to fail out"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 31
+   },
+   {
+    "t": "just got my orgo grade back and i'm kind of spiraling."
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " can you remind me it's one exam?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "say what happened, then ask for exactly what you need. your friends can't help with 'i'm literally going to fail out.'\n\n#finalsweek #collegelife #studentlife"
+ },
+ {
+  "id": "b2r08",
+  "format": "typing_reel",
+  "cluster": "Future & feeling behind",
+  "hook_pattern": "what_to_text_back",
+  "hook": "what to text a friend who didn't get the internship",
+  "contact": "jordan",
+  "context": [
+   {
+    "from": "them",
+    "text": "didn't get it.",
+    "stamp": "Today 4:41 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "everything happens for"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 22
+   },
+   {
+    "t": "ugh. i'm sorry, you were so ready for that one."
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " want to get food tonight? we don't have to talk about it"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "skip the silver lining. 'that sucks + food' is the move.\n\nsend this to whoever's in recruiting season with you.\n\n#internship #recruiting #20s"
+ },
+ {
+  "id": "b2r09",
+  "format": "typing_reel",
+  "cluster": "Social anxiety (class & social)",
+  "hook_pattern": "dont_send",
+  "pair": "b2-P4",
+  "hook": "never send 'can we talk?' with nothing else",
+  "contact": "alex",
+  "context": [],
+  "script": [
+   {
+    "t": "hey can we talk later?"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 22
+   },
+   {
+    "t": "nothing bad! but there's something i want to talk about in person."
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " free tomorrow after class?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "'can we talk?' with no context = 6 hours of their worst-case scenarios. two extra words fix it.\n\n#communication #relationships #friendship"
+ },
+ {
+  "id": "b2r10",
+  "format": "typing_reel",
+  "cluster": "Home & family",
+  "hook_pattern": "what_to_text_back",
+  "not_before": "2026-12-12",
+  "not_after": "2026-12-31",
+  "hook": "what to text when your parents ask how finals went",
+  "contact": "mom",
+  "context": [
+   {
+    "from": "them",
+    "text": "how did finals go??",
+    "stamp": "Today 6:15 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "fine"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 4
+   },
+   {
+    "t": "mixed honestly. one really good, one i'm not happy with."
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " i'll tell you more at dinner, i'm a little fried right now"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "'fine' starts the interrogation. a short honest answer + a later time ends it.\n\n#finalsweek #parents #collegelife"
+ },
+ {
+  "id": "b2r11",
+  "format": "typing_reel",
+  "cluster": "School stress & procrastination",
+  "hook_pattern": "how_to",
+  "hook": "how to ask a classmate for their notes",
+  "contact": "chris (econ)",
+  "context": [],
+  "script": [
+   {
+    "t": "hey sorry to bother you but"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 27
+   },
+   {
+    "t": "hey! i missed thursday's lecture, any chance i could see your notes?"
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " happy to send you mine from last week"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "offer something back and it stops being a favor. it's a trade.\n\n#collegelife #studytips #finals"
+ },
+ {
+  "id": "b2r12",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "how_to",
+  "hook": "how to apologize for forgetting a friend's birthday",
+  "contact": "priya",
+  "context": [],
+  "script": [
+   {
+    "t": "omg i'm the worst friend ever"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 29
+   },
+   {
+    "t": "i completely missed your birthday and i feel awful. no excuse."
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " can i take you to dinner this week?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "'i'm the worst' makes them comfort you. 'no excuse + dinner' makes it about them.\n\n#friendship #birthday #20s"
+ },
+ {
+  "id": "b2r13",
+  "format": "typing_reel",
+  "cluster": "Future & feeling behind",
+  "hook_pattern": "text_to_send_when",
+  "not_before": "2026-12-27",
+  "not_after": "2026-12-31",
+  "hook": "the text to send on nye when everyone's posting their year",
+  "contact": "ari",
+  "context": [],
+  "script": [
+   {
+    "t": "my 2026 recap would just be"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 27
+   },
+   {
+    "t": "doing a low-key nye. want to come over, make bad pasta and not make any resolutions?"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "you don't need a year in review. you need one person and a pot of pasta.\n\n#newyearseve #20s #friendship"
+ },
+ {
+  "id": "b2x-del-a",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "what_to_text_back",
+  "trial_only": true,
+  "test": {
+   "id": "b2-deletion",
+   "variable": "hesitation (deleted first draft)",
+   "hypothesis": "showing a bad first draft that gets deleted lowers skip rate and raises sends vs typing the good message straight away"
+  },
+  "hook": "what to text back when your friend had a bad day",
+  "contact": "sam",
+  "context": [
+   {
+    "from": "them",
+    "text": "today was so bad lol",
+    "stamp": "Today 8:51 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "lol same"
+   },
+   {
+    "p": 0.9
+   },
+   {
+    "d": 8
+   },
+   {
+    "t": "do you want to tell me about it, or do you want a distraction?"
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " i'm good for either"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "two options, zero pressure. let them pick what kind of help they want.\n\n#friendship #20s #communication"
+ },
+ {
+  "id": "b2x-del-b",
+  "format": "typing_reel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "what_to_text_back",
+  "trial_only": true,
+  "test": {
+   "id": "b2-deletion",
+   "variable": "hesitation (deleted first draft)",
+   "hypothesis": "showing a bad first draft that gets deleted lowers skip rate and raises sends vs typing the good message straight away"
+  },
+  "hook": "what to text back when your friend had a bad day",
+  "contact": "sam",
+  "context": [
+   {
+    "from": "them",
+    "text": "today was so bad lol",
+    "stamp": "Today 8:51 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "do you want to tell me about it, or do you want a distraction?"
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " i'm good for either"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "two options, zero pressure. let them pick what kind of help they want.\n\n#friendship #20s #communication"
+ },
+ {
+  "id": "b2x-open-a",
+  "format": "typing_reel",
+  "cluster": "Low mood & daily life",
+  "hook_pattern": "how_to_say_no",
+  "trial_only": true,
+  "test": {
+   "id": "b2-opening",
+   "variable": "opening (hook hold vs mid-typing open)",
+   "hypothesis": "opening mid-hesitation (draft already typed) cuts 3-second skip rate vs a 1.6s hold on the hook"
+  },
+  "hook": "how to say no to a favor you don't have time for",
+  "contact": "ryan",
+  "context": [
+   {
+    "from": "them",
+    "text": "can you help me move saturday?",
+    "stamp": "Today 1:12 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "ugh i wish i could but"
+   },
+   {
+    "p": 0.8
+   },
+   {
+    "d": 22
+   },
+   {
+    "t": "i can't do saturday, but i can come help pack friday night for an hour"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "a no with a smaller yes attached is still a no. it just lands better.\n\n#boundaries #friendship #20s"
+ },
+ {
+  "id": "b2x-open-b",
+  "format": "typing_reel",
+  "cluster": "Low mood & daily life",
+  "hook_pattern": "how_to_say_no",
+  "trial_only": true,
+  "start_mid": true,
+  "test": {
+   "id": "b2-opening",
+   "variable": "opening (hook hold vs mid-typing open)",
+   "hypothesis": "opening mid-hesitation (draft already typed) cuts 3-second skip rate vs a 1.6s hold on the hook"
+  },
+  "hook": "how to say no to a favor you don't have time for",
+  "contact": "ryan",
+  "context": [
+   {
+    "from": "them",
+    "text": "can you help me move saturday?",
+    "stamp": "Today 1:12 PM"
+   }
+  ],
+  "script": [
+   {
+    "t": "ugh i wish i could but"
+   },
+   {
+    "p": 0.8
+   },
+   {
+    "d": 22
+   },
+   {
+    "t": "i can't do saturday, but i can come help pack friday night for an hour"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "a no with a smaller yes attached is still a no. it just lands better.\n\n#boundaries #friendship #20s"
+ },
+ {
+  "id": "b2x-theme-a",
+  "format": "typing_reel",
+  "cluster": "Sleep & night thoughts",
+  "hook_pattern": "text_to_send_when",
+  "trial_only": true,
+  "test": {
+   "id": "b2-theme",
+   "variable": "theme (light vs dark) on a night topic",
+   "hypothesis": "dark mode matches the 2am moment and holds attention longer (avg watch time) than light mode"
+  },
+  "hook": "the text to send at 2am when your brain won't turn off",
+  "contact": "best friend",
+  "context": [],
+  "script": [
+   {
+    "t": "are you up i'm spiraling about"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 30
+   },
+   {
+    "t": "if you're up, send me the dumbest video you've seen this week. brain won't turn off"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "you don't always need to talk it through at 2am. sometimes you just need a distraction from someone who gets you.\n\n#overthinking #sleep #20s"
+ },
+ {
+  "id": "b2x-theme-b",
+  "format": "typing_reel",
+  "cluster": "Sleep & night thoughts",
+  "hook_pattern": "text_to_send_when",
+  "trial_only": true,
+  "theme": "dark",
+  "test": {
+   "id": "b2-theme",
+   "variable": "theme (light vs dark) on a night topic",
+   "hypothesis": "dark mode matches the 2am moment and holds attention longer (avg watch time) than light mode"
+  },
+  "hook": "the text to send at 2am when your brain won't turn off",
+  "contact": "best friend",
+  "context": [],
+  "script": [
+   {
+    "t": "are you up i'm spiraling about"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 30
+   },
+   {
+    "t": "if you're up, send me the dumbest video you've seen this week. brain won't turn off"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "you don't always need to talk it through at 2am. sometimes you just need a distraction from someone who gets you.\n\n#overthinking #sleep #20s"
+ },
+ {
+  "id": "b2x-hook-a",
+  "format": "typing_reel",
+  "cluster": "Getting help",
+  "hook_pattern": "text_to_send_when",
+  "trial_only": true,
+  "test": {
+   "id": "b2-hook",
+   "variable": "hook wording (situation vs identity)",
+   "hypothesis": "an identity hook ('for the friend who always listens') earns more sends than a plain situation hook, because people tag themselves"
+  },
+  "hook": "the text to send when you need someone to listen",
+  "contact": "lena",
+  "context": [],
+  "script": [
+   {
+    "t": "i hate making it about me but"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 29
+   },
+   {
+    "t": "can i vent for 10 minutes?"
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " i usually just listen but i could really use it today"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "being the listener doesn't mean you never get a turn.\n\n#friendship #mentalhealthawareness #20s"
+ },
+ {
+  "id": "b2x-hook-b",
+  "format": "typing_reel",
+  "cluster": "Getting help",
+  "hook_pattern": "identity",
+  "trial_only": true,
+  "test": {
+   "id": "b2-hook",
+   "variable": "hook wording (situation vs identity)",
+   "hypothesis": "an identity hook ('for the friend who always listens') earns more sends than a plain situation hook, because people tag themselves"
+  },
+  "hook": "for the friend who always listens: the text for when you need it back",
+  "contact": "lena",
+  "context": [],
+  "script": [
+   {
+    "t": "i hate making it about me but"
+   },
+   {
+    "p": 1.0
+   },
+   {
+    "d": 29
+   },
+   {
+    "t": "can i vent for 10 minutes?"
+   },
+   {
+    "p": 0.5
+   },
+   {
+    "t": " i usually just listen but i could really use it today"
+   },
+   {
+    "p": 0.6
+   },
+   {
+    "send": true
+   }
+  ],
+  "caption": "being the listener doesn't mean you never get a turn.\n\n#friendship #mentalhealthawareness #20s"
+ },
+ {
+  "id": "b2c01",
+  "format": "notes_carousel",
+  "cluster": "Home & family",
+  "hook_pattern": "exact_words",
+  "not_before": "2026-12-15",
+  "not_after": "2026-12-31",
+  "hook": "what to say when relatives ask the questions",
+  "notes": [
+   "'so are you seeing anyone?' → 'not right now, i'm focused on school. how's the new kitchen?'",
+   "'what are you going to do with that major?' → 'a few things i'm excited about. ask me again in may.'",
+   "'how are your grades?' → 'one class was rough, the rest went well. i learned a lot.'",
+   "'you look tired' → 'finals! i'm sleeping all week.'",
+   "the move every time: one short honest answer, then ask them about something they love."
+  ],
+  "caption": "rehearse it once and the dinner table gets so much easier.\n\nsend this to whoever's sitting next to you at dinner.\n\n#holidays #family #collegelife"
+ },
+ {
+  "id": "b2c02",
+  "format": "copy_carousel",
+  "cluster": "Money",
+  "hook_pattern": "how_to_say_no",
+  "not_after": "2026-12-20",
+  "hook": "how to tell your friends you can't do the gift exchange this year",
+  "contact": "the group",
+  "versions": [
+   {
+    "label": "just honest",
+    "text": "i'm gonna sit out the gift exchange this year, money's tight. still 100% coming to the party though"
+   },
+   {
+    "label": "suggest a cap",
+    "text": "could we do a $15 cap this year? i want to join but i'm on a real budget"
+   },
+   {
+    "label": "swap the idea",
+    "text": "what if we did handwritten cards instead of gifts this year? honestly i'd love that more"
+   }
+  ],
+  "why": [
+   "'money's tight' is a full reason. no details owed",
+   "suggesting a cap often helps someone else who was too nervous to ask",
+   "you're opting out of the spending, not the friendship"
+  ],
+  "caption": "the best part was never the gift. send this to the group chat organizer before the names get drawn.\n\n#holidays #moneytips #friendship"
+ },
+ {
+  "id": "b2c03",
+  "format": "mail_carousel",
+  "cluster": "School stress & procrastination",
+  "hook_pattern": "exact_words",
+  "not_before": "2026-12-14",
+  "not_after": "2027-01-20",
+  "hook": "the email to ask about a grade (without sounding entitled)",
+  "versions": [
+   {
+    "label": "to understand it",
+    "subject": "Question about my final grade",
+    "text": "Hi Professor Lee,\n\nThank you for a great quarter. I was surprised by my final grade and want to understand where I lost the most points. Would you be open to a short meeting or a quick note on the final exam?\n\nBest,\nJordan"
+   },
+   {
+    "label": "if you think there's an error",
+    "subject": "Possible grading error – Final exam Q4",
+    "text": "Hi Professor Lee,\n\nI think there may be an error on question 4 of my final. I was marked 6/12 but my answer matches the solution posted on Canvas. Could you take a second look when you have a moment?\n\nThank you,\nJordan"
+   },
+   {
+    "label": "to improve next time",
+    "subject": "Advice for next quarter",
+    "text": "Hi Professor Lee,\n\nI didn't do as well as I hoped this quarter and I'm taking the next course in the sequence. What would you focus on if you were me?\n\nThanks so much,\nJordan"
+   }
+  ],
+  "why": [
+   "ask to understand, never demand points",
+   "point to something specific: a question, a rubric line",
+   "asking for advice turns a complaint into a relationship"
+  ],
+  "caption": "most grade emails fail in the first sentence. save this one.\n\n#collegelife #finals #studytips"
+ },
+ {
+  "id": "b2c04",
+  "format": "copy_carousel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "text_to_send_when",
+  "hook": "the text to send your ex-best friend",
+  "contact": "old best friend",
+  "versions": [
+   {
+    "label": "if it ended in a fight",
+    "text": "i've thought about what happened a lot. i'm sorry for my part in it. i'd really like to talk if you're open to it"
+   },
+   {
+    "label": "if you just drifted",
+    "text": "i miss you. i don't know exactly when we drifted but i'd love to get coffee and catch up"
+   },
+   {
+    "label": "if you're not ready but want to leave the door open",
+    "text": "no need to reply. i just wanted you to know i think about you and i'm rooting for you"
+   }
+  ],
+  "why": [
+   "own your part without rewriting the whole story",
+   "you can't control their reply. you can control whether the door's open",
+   "the low-pressure version is still worth sending"
+  ],
+  "caption": "some friendships end. some are just waiting for one text.\n\n#friendship #nostalgia #20s"
+ },
+ {
+  "id": "b2c05",
+  "format": "dont_send",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "dont_send",
+  "hook": "stop sending 'we should hang out sometime'",
+  "contact": "maya",
+  "bad": "we should hang out sometime!!",
+  "good": "free thursday after 6? there's a ramen place i've been wanting to try",
+  "why": [
+   "'sometime' is a polite way of saying never",
+   "a day + a place makes yes easy",
+   "if thursday doesn't work, they'll offer another day"
+  ],
+  "caption": "friendships live or die on specifics. send this to your 'we should hang out' friend and see what happens.\n\n#friendship #collegelife #20s"
+ },
+ {
+  "id": "b2c06",
+  "format": "dont_send",
+  "cluster": "Social anxiety (class & social)",
+  "hook_pattern": "dont_send",
+  "hook": "don't send 'sorry for being annoying'",
+  "contact": "theo",
+  "bad": "sorry for being so annoying earlier and talking about myself so much",
+  "good": "thank you for listening earlier. it really helped",
+  "why": [
+   "apologizing makes them reassure you",
+   "thanking them makes them feel good about helping",
+   "same feeling, better message"
+  ],
+  "caption": "swap 'sorry' for 'thank you' and watch how differently people respond.\n\n#communication #anxiety #friendship"
+ },
+ {
+  "id": "b2c07",
+  "format": "dont_send",
+  "cluster": "Social anxiety (class & social)",
+  "hook_pattern": "dont_send",
+  "pair": "b2-P4",
+  "hook": "never send 'can we talk?' with nothing else",
+  "contact": "alex",
+  "bad": "can we talk later?",
+  "good": "nothing bad! but there's something i want to talk about in person. free tomorrow after class?",
+  "why": [
+   "no context = they assume the worst for hours",
+   "'nothing bad' (if true) changes everything",
+   "a time turns dread into a plan"
+  ],
+  "caption": "two extra words save someone a whole afternoon of panic.\n\n#communication #relationships #friendship"
+ },
+ {
+  "id": "b2c08",
+  "format": "number_carousel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "number_first",
+  "hook": "29% of 18–29 year olds felt lonely a lot of yesterday",
+  "number": "29%",
+  "stat": "of 18–29 year olds said they felt lonely 'a lot of the day yesterday'",
+  "source": "Gallup, 2025",
+  "then": [
+   "that's almost 1 in 3 people your age, on any given day",
+   "you won't be able to tell who",
+   "so send one text to someone you haven't talked to in a while:"
+  ],
+  "copy": "random but i'm making pasta tonight. want some?",
+  "caption": "loneliness doesn't look like anything from the outside. a low-stakes invite is the easiest fix there is.\n\nsource: Gallup (2025).\n\n#loneliness #friendship #20s"
+ },
+ {
+  "id": "b2c09",
+  "format": "notes_carousel",
+  "cluster": "Low mood & daily life",
+  "hook_pattern": "list",
+  "not_before": "2026-12-12",
+  "not_after": "2027-01-05",
+  "hook": "how to keep winter break from feeling like a void",
+  "notes": [
+   "put one plan per week on the calendar with someone. a walk counts.",
+   "pick one small project: a book, a recipe, learning 10 chords.",
+   "leave the house once a day, even for 15 minutes.",
+   "text 3 friends from school and set an actual call time.",
+   "keep your wake-up time within about 2 hours of normal. january you will thank you."
+  ],
+  "caption": "break feels great for 4 days and weird by day 10. a little structure fixes most of it.\n\nsave this for the second week of break.\n\n#winterbreak #collegelife #selfcare"
+ },
+ {
+  "id": "b2c10",
+  "format": "mail_carousel",
+  "cluster": "Post-grad & new city",
+  "hook_pattern": "exact_words",
+  "hook": "the email to your landlord that actually gets things fixed",
+  "versions": [
+   {
+    "label": "first request",
+    "subject": "Repair request – Unit 3B heating",
+    "text": "Hi Dana,\n\nThe heat in Unit 3B stopped working on Monday, Dec 7. The thermostat is set to 70 but the apartment is at 58. Photos attached. Could you send someone this week? I'm home after 4pm any day.\n\nThanks,\nJordan"
+   },
+   {
+    "label": "follow-up after a week",
+    "subject": "Following up – Unit 3B heating (reported Dec 7)",
+    "text": "Hi Dana,\n\nFollowing up on my Dec 7 request: the heat is still not working. Could you let me know when a repair is scheduled?\n\nThank you,\nJordan"
+   },
+   {
+    "label": "if it's still not fixed",
+    "subject": "Third request – Unit 3B heating",
+    "text": "Hi Dana,\n\nThis is my third request since Dec 7. The apartment has been without working heat for two weeks. Please confirm a repair date by Friday. I've kept copies of all our messages.\n\nJordan"
+   }
+  ],
+  "why": [
+   "dates, specifics and photos make it easy to act on",
+   "put everything in writing so there's a record",
+   "each follow-up references the first date"
+  ],
+  "caption": "first apartment? save this. the paper trail is the whole strategy.\n\n#firstapartment #newcity #20s",
+  "to": "Dana (landlord)"
+ },
+ {
+  "id": "b2c11",
+  "format": "copy_carousel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "what_to_text_back",
+  "hook": "what to text when a friend cancels on you again",
+  "contact": "chris",
+  "versions": [
+   {
+    "label": "light",
+    "text": "no worries! when works for you? want to actually lock it in"
+   },
+   {
+    "label": "honest",
+    "text": "totally get it, but i'll be honest, this is the third time and i miss you. is everything ok?"
+   },
+   {
+    "label": "hand them the next move",
+    "text": "all good. when you have a free night, send me a day and i'll be there"
+   }
+  ],
+  "why": [
+   "the first time, let it go",
+   "the third time, ask if they're ok. it's often not about you",
+   "handing them the next plan shows whether they want one"
+  ],
+  "caption": "repeated canceling is information. one honest question gets you the answer.\n\n#friendship #20s #communication"
+ },
+ {
+  "id": "b2c12",
+  "format": "copy_carousel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "how_to",
+  "hook": "how to ask someone to hang out 1:1 for the first time",
+  "contact": "new friend",
+  "versions": [
+   {
+    "label": "after a class",
+    "text": "hey, i liked talking after class today. want to grab lunch after tuesday's lecture?"
+   },
+   {
+    "label": "around a shared thing",
+    "text": "you mentioned you like thrifting. there's a vintage market sunday, want to go?"
+   },
+   {
+    "label": "low stakes",
+    "text": "i'm studying at the library tomorrow at 2 if you want company"
+   }
+  ],
+  "why": [
+   "reference the last real conversation",
+   "an activity takes the pressure off talking",
+   "'if you want company' is easy to say yes to and easy to say no to"
+  ],
+  "caption": "group friends become real friends one 1:1 at a time.\n\n#friendship #collegelife #freshman"
+ },
+ {
+  "id": "b2c13",
+  "format": "notes_carousel",
+  "cluster": "Social anxiety (class & social)",
+  "hook_pattern": "list",
+  "hook": "rules for a hard conversation over text (if you have to)",
+  "notes": [
+   "lead with 'nothing bad' or 'this is about us, not an emergency', whichever is true.",
+   "one point per message. don't send the essay.",
+   "ask before you vent: 'can i be honest about something?'",
+   "nothing heavy after midnight. it'll still be true in the morning.",
+   "read it out loud before sending. if it sounds cold, it is."
+  ],
+  "caption": "in person is better. but if it has to be text, these 5 rules prevent most of the damage.\n\n#communication #relationships #friendship"
+ },
+ {
+  "id": "b2c14",
+  "format": "copy_carousel",
+  "cluster": "Getting help",
+  "hook_pattern": "what_to_text_back",
+  "hook": "how to answer 'how are you?' when you're not great",
+  "contact": "friend",
+  "versions": [
+   {
+    "label": "honest, short",
+    "text": "honestly not my best week. but i'm hanging in there. you?"
+   },
+   {
+    "label": "honest, with an ask",
+    "text": "kind of rough lately. would you be up for a walk this week? i could use the company"
+   },
+   {
+    "label": "not ready to talk",
+    "text": "a little meh, but i don't really want to get into it yet. tell me something good from your week"
+   }
+  ],
+  "why": [
+   "you don't owe everyone the full story",
+   "one honest word opens the door for later",
+   "asking for something specific makes it easy for them to help"
+  ],
+  "caption": "'good, you?' on autopilot is how people end up struggling alone. try one honest word.\n\n#mentalhealthawareness #friendship #20s"
+ },
+ {
+  "id": "b2c15",
+  "format": "copy_carousel",
+  "cluster": "Loneliness & friendship",
+  "hook_pattern": "text_to_send_when",
+  "not_before": "2026-12-20",
+  "not_after": "2027-01-02",
+  "hook": "the holiday text to send someone you've drifted from",
+  "contact": "kayla",
+  "versions": [
+   {
+    "label": "simple",
+    "text": "happy holidays! thinking of you this year. hope it's a good one"
+   },
+   {
+    "label": "with a memory",
+    "text": "happy holidays! still think about that secret santa disaster in 10th grade. hope you're doing well"
+   },
+   {
+    "label": "with an opening",
+    "text": "happy holidays!! are you home this week? would love to grab coffee if you're around"
+   }
+  ],
+  "why": [
+   "holidays are the lowest-stakes excuse to reach out all year",
+   "a shared memory makes it personal, not a mass text",
+   "adding a plan turns a greeting into a reunion"
+  ],
+  "caption": "this is the one week a year it's completely normal to text anyone. use it.\n\n#holidays #friendship #20s"
+ }
+]

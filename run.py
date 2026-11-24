@@ -333,7 +333,9 @@ def cmd_ci():
     lines = LOG.read_text().splitlines()[-400:] if LOG.exists() else []
     LOG.write_text("\n".join(lines) + "\n")
     git = ["git", "-C", str(ROOT)]
-    subprocess.run(git + ["add", "data/engine.db.enc", "data/token.enc", "data/report.json", "data/engine.log", "dashboard.html"], check=False)
+    keep = ["data/engine.db.enc", "data/token.enc", "data/report.json", "data/engine.log", "dashboard.html"]
+    keep = [p for p in keep if (ROOT / p).exists()]  # a missing path makes `git add` add nothing at all
+    subprocess.run(git + ["add", "--"] + keep, check=True)
     subprocess.run(git + ["commit", "-q", "-m", "state"], check=False)
     subprocess.run(git + ["pull", "-q", "--rebase", "origin", "main"], check=False)
     subprocess.run(git + ["push", "-q", "origin", "HEAD:main"], check=True)

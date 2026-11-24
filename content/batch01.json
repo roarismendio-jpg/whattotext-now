@@ -69,7 +69,14 @@
    "'i miss you' does the work. you don't need an excuse",
    "one specific plan beats 'we should hang out sometime'"
   ],
-  "caption": "save this for the friend you keep meaning to text. then actually text them.\n\n#friendship #collegelife #20s"
+  "caption": "save this for the friend you keep meaning to text. then actually text them.\n\n#friendship #collegelife #20s",
+  "context": [
+   {
+    "stamp": "Oct 12",
+    "from": "them",
+    "text": "lmk when you're back from break!!"
+   }
+  ]
  },
  {
   "id": "r02",
@@ -142,7 +149,14 @@
    "offering an alternative keeps you in the friendship, not out of it",
    "asking for a cheaper version often helps someone else who was too nervous to say it"
   ],
-  "caption": "42% of people under 30 say they're barely getting by (harvard youth poll, 2025). you're probably not the only one in that chat.\n\n#moneytips #collegelife #20s"
+  "caption": "42% of people under 30 say they're barely getting by (harvard youth poll, 2025). you're probably not the only one in that chat.\n\n#moneytips #collegelife #20s",
+  "context": [
+   {
+    "from": "them",
+    "name": "kayla",
+    "text": "ok cabin is $420 each + lift tickets. who's in??"
+   }
+  ]
  },
  {
   "id": "r03",
@@ -219,7 +233,14 @@
    "giving two options lets them choose what kind of support they want",
    "if they mention hurting themselves or not wanting to be here, call or text 988 together. that's not overreacting"
   ],
-  "caption": "screenshot the one that sounds most like you, so it's ready when you need it.\n\n#friendship #mentalhealthawareness #20s"
+  "caption": "screenshot the one that sounds most like you, so it's ready when you need it.\n\n#friendship #mentalhealthawareness #20s",
+  "context": [
+   {
+    "stamp": "Today 11:58 PM",
+    "from": "them",
+    "text": "honestly i'm not doing great lately"
+   }
+  ]
  },
  {
   "id": "r04",
@@ -408,7 +429,14 @@
    "name what you did, why it happened, and own it",
    "then stop. don't add 'but'"
   ],
-  "caption": "the 'if' is doing a lot of damage.\n\nsend this to your roommate (you know why).\n\n#roommates #collegelife #friendship"
+  "caption": "the 'if' is doing a lot of damage.\n\nsend this to your roommate (you know why).\n\n#roommates #collegelife #friendship",
+  "context": [
+   {
+    "stamp": "Yesterday 10:48 PM",
+    "from": "them",
+    "text": "it's fine"
+   }
+  ]
  },
  {
   "id": "x01",
@@ -495,7 +523,14 @@
    "saying it stung is allowed, as long as you don't accuse",
    "being the one who makes the next plan is the fastest way back in"
   ],
-  "caption": "being left out once doesn't mean you're not wanted. saying something small is better than stewing for a week.\n\n#friendship #collegelife #20s"
+  "caption": "being left out once doesn't mean you're not wanted. saying something small is better than stewing for a week.\n\n#friendship #collegelife #20s",
+  "context": [
+   {
+    "from": "them",
+    "name": "priya",
+    "text": "last night was so fun we need to do that again"
+   }
+  ]
  },
  {
   "id": "n02",
@@ -576,7 +611,14 @@
    "a deadline ('before rent') isn't rude, it's useful",
    "a request link removes the awkward part for both of you"
   ],
-  "caption": "it's not rude to want your money back. it's rude to make you ask twice.\n\n#moneytips #collegelife #20s"
+  "caption": "it's not rude to want your money back. it's rude to make you ask twice.\n\n#moneytips #collegelife #20s",
+  "context": [
+   {
+    "stamp": "Oct 3",
+    "from": "me",
+    "text": "got the tickets!! $68 each"
+   }
+  ]
  },
  {
   "id": "r09",
@@ -628,7 +670,14 @@
    "a clear ask with a time limit is easier to say yes to",
    "offering something back makes it a trade, not a burden"
   ],
-  "caption": "asking clearly isn't rude. people respect it more, not less.\n\n#firstjob #communication #20s"
+  "caption": "asking clearly isn't rude. people respect it more, not less.\n\n#firstjob #communication #20s",
+  "context": [
+   {
+    "stamp": "Monday",
+    "from": "them",
+    "text": "yep i'll send them over later today"
+   }
+  ]
  },
  {
   "id": "n03",
@@ -713,7 +762,13 @@
    "ask them to choose. prioritizing is part of their job",
    "flagging it early reads as competent. missing the deadline doesn't"
   ],
-  "caption": "saying 'i'm overwhelmed' is vague. saying 'which one first?' is a skill.\n\n#firstjob #corporatelife #20s"
+  "caption": "saying 'i'm overwhelmed' is vague. saying 'which one first?' is a skill.\n\n#firstjob #corporatelife #20s",
+  "context": [
+   {
+    "from": "them",
+    "text": "how's everything going with the launch stuff?"
+   }
+  ]
  },
  {
   "id": "r11",
@@ -837,7 +892,14 @@
    "a drink in your hand ends most questions",
    "telling one friend ahead of time means someone has your back"
   ],
-  "caption": "you don't owe anyone a reason. send this to the friend who's sober-curious.\n\n#collegelife #sobercurious #20s"
+  "caption": "you don't owe anyone a reason. send this to the friend who's sober-curious.\n\n#collegelife #sobercurious #20s",
+  "context": [
+   {
+    "from": "them",
+    "name": "jules",
+    "text": "pregame at 9 at mine!! bring whatever you're drinking"
+   }
+  ]
  },
  {
   "id": "r13",
@@ -895,7 +957,14 @@
    "say the feeling, not the accusation",
    "ask for a conversation, not an apology"
   ],
-  "caption": "one-word replies start the fights that real sentences prevent.\n\n#communication #friendship #relationships"
+  "caption": "one-word replies start the fights that real sentences prevent.\n\n#communication #friendship #relationships",
+  "context": [
+   {
+    "stamp": "Today 6:12 PM",
+    "from": "them",
+    "text": "sorry can't make it tonight, something came up"
+   }
+  ]
  },
  {
   "id": "c09",
@@ -923,7 +992,14 @@
    "pick up the actual thread they left you",
    "a little honesty about why goes a long way"
   ],
-  "caption": "late is better than never. the longer you wait, the harder it gets, so send it now.\n\n#friendship #introvert #20s"
+  "caption": "late is better than never. the longer you wait, the harder it gets, so send it now.\n\n#friendship #introvert #20s",
+  "context": [
+   {
+    "stamp": "Oct 28",
+    "from": "them",
+    "text": "omg i have to tell you what happened at work"
+   }
+  ]
  },
  {
   "id": "n04",
@@ -1009,7 +1085,13 @@
    "say how you feel about it, not just the fact",
    "a plan answers the question they're going to ask anyway"
   ],
-  "caption": "it's your degree. you still get to tell them in a way that goes well.\n\n#collegelife #majors #parents"
+  "caption": "it's your degree. you still get to tell them in a way that goes well.\n\n#collegelife #majors #parents",
+  "context": [
+   {
+    "from": "them",
+    "text": "how are classes going sweetie?"
+   }
+  ]
  },
  {
   "id": "n05",
@@ -1042,7 +1124,13 @@
    "one honest line keeps the door open",
    "asking for a call later gives you time to think about what to say"
   ],
-  "caption": "'i'm fine' closes the door. 'not my best week' leaves it cracked open.\n\n#mentalhealthawareness #parents #20s"
+  "caption": "'i'm fine' closes the door. 'not my best week' leaves it cracked open.\n\n#mentalhealthawareness #parents #20s",
+  "context": [
+   {
+    "from": "them",
+    "text": "how are you doing honey?"
+   }
+  ]
  },
  {
   "id": "c11",
@@ -1120,7 +1208,14 @@
    "a specific offer is easier to accept than 'anything'",
    "the text a week later matters most. that's when everyone else stops"
   ],
-  "caption": "the week-later text is the one people remember.\n\n#grief #friendship #20s"
+  "caption": "the week-later text is the one people remember.\n\n#grief #friendship #20s",
+  "context": [
+   {
+    "stamp": "Today 9:20 AM",
+    "from": "them",
+    "text": "my grandpa passed this morning"
+   }
+  ]
  },
  {
   "id": "n06",

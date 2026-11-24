@@ -982,7 +982,14 @@
    "suggesting a cap often helps someone else who was too nervous to ask",
    "you're opting out of the spending, not the friendship"
   ],
-  "caption": "the best part was never the gift. send this to the group chat organizer before the names get drawn.\n\n#holidays #moneytips #friendship"
+  "caption": "the best part was never the gift. send this to the group chat organizer before the names get drawn.\n\n#holidays #moneytips #friendship",
+  "context": [
+   {
+    "from": "them",
+    "name": "kayla",
+    "text": "ok secret santa!! $50 limit, drawing names friday"
+   }
+  ]
  },
  {
   "id": "b2c03",
@@ -1042,7 +1049,14 @@
    "you can't control their reply. you can control whether the door's open",
    "the low-pressure version is still worth sending"
   ],
-  "caption": "some friendships end. some are just waiting for one text.\n\n#friendship #nostalgia #20s"
+  "caption": "some friendships end. some are just waiting for one text.\n\n#friendship #nostalgia #20s",
+  "context": [
+   {
+    "stamp": "Mar 2",
+    "from": "them",
+    "text": "happy birthday!! hope it's a good one"
+   }
+  ]
  },
  {
   "id": "b2c05",
@@ -1058,7 +1072,13 @@
    "a day + a place makes yes easy",
    "if thursday doesn't work, they'll offer another day"
   ],
-  "caption": "friendships live or die on specifics. send this to your 'we should hang out' friend and see what happens.\n\n#friendship #collegelife #20s"
+  "caption": "friendships live or die on specifics. send this to your 'we should hang out' friend and see what happens.\n\n#friendship #collegelife #20s",
+  "context": [
+   {
+    "from": "them",
+    "text": "it was so good running into you!!"
+   }
+  ]
  },
  {
   "id": "b2c06",
@@ -1074,7 +1094,13 @@
    "thanking them makes them feel good about helping",
    "same feeling, better message"
   ],
-  "caption": "swap 'sorry' for 'thank you' and watch how differently people respond.\n\n#communication #anxiety #friendship"
+  "caption": "swap 'sorry' for 'thank you' and watch how differently people respond.\n\n#communication #anxiety #friendship",
+  "context": [
+   {
+    "from": "them",
+    "text": "sure what's up?"
+   }
+  ]
  },
  {
   "id": "b2c07",
@@ -1091,7 +1117,14 @@
    "'nothing bad' (if true) changes everything",
    "a time turns dread into a plan"
   ],
-  "caption": "two extra words save someone a whole afternoon of panic.\n\n#communication #relationships #friendship"
+  "caption": "two extra words save someone a whole afternoon of panic.\n\n#communication #relationships #friendship",
+  "context": [
+   {
+    "stamp": "Sunday",
+    "from": "them",
+    "text": "lol that was so funny"
+   }
+  ]
  },
  {
   "id": "b2c08",
@@ -1184,7 +1217,13 @@
    "the third time, ask if they're ok. it's often not about you",
    "handing them the next plan shows whether they want one"
   ],
-  "caption": "repeated canceling is information. one honest question gets you the answer.\n\n#friendship #20s #communication"
+  "caption": "repeated canceling is information. one honest question gets you the answer.\n\n#friendship #20s #communication",
+  "context": [
+   {
+    "from": "them",
+    "text": "ahh i'm so sorry, can we do next week instead?? something came up"
+   }
+  ]
  },
  {
   "id": "b2c12",
@@ -1212,7 +1251,13 @@
    "an activity takes the pressure off talking",
    "'if you want company' is easy to say yes to and easy to say no to"
   ],
-  "caption": "group friends become real friends one 1:1 at a time.\n\n#friendship #collegelife #freshman"
+  "caption": "group friends become real friends one 1:1 at a time.\n\n#friendship #collegelife #freshman",
+  "context": [
+   {
+    "from": "them",
+    "text": "that lecture was brutal today lol"
+   }
+  ]
  },
  {
   "id": "b2c13",
@@ -1239,7 +1284,7 @@
   "versions": [
    {
     "label": "honest, short",
-    "text": "honestly not my best week. but i'm hanging in there. you?"
+    "text": "not my best week tbh. but i'm hanging in there. you?"
    },
    {
     "label": "honest, with an ask",
@@ -1255,7 +1300,13 @@
    "one honest word opens the door for later",
    "asking for something specific makes it easy for them to help"
   ],
-  "caption": "'good, you?' on autopilot is how people end up struggling alone. try one honest word.\n\n#mentalhealthawareness #friendship #20s"
+  "caption": "'good, you?' on autopilot is how people end up struggling alone. try one honest word.\n\n#mentalhealthawareness #friendship #20s",
+  "context": [
+   {
+    "from": "them",
+    "text": "how are you??"
+   }
+  ]
  },
  {
   "id": "b2c15",
@@ -1285,6 +1336,13 @@
    "a shared memory makes it personal, not a mass text",
    "adding a plan turns a greeting into a reunion"
   ],
-  "caption": "this is the one week a year it's completely normal to text anyone. use it.\n\n#holidays #friendship #20s"
+  "caption": "this is the one week a year it's completely normal to text anyone. use it.\n\n#holidays #friendship #20s",
+  "context": [
+   {
+    "stamp": "Jul 14",
+    "from": "them",
+    "text": "omg we have to catch up soon"
+   }
+  ]
  }
 ]

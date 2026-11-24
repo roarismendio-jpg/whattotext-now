@@ -45,12 +45,18 @@ def now():
 def cmd_import(path):
     c = db.conn()
     items = json.loads(Path(path).read_text())
-    added, pairs, tests = 0, {}, {}
+    added, updated, pairs, tests = 0, 0, {}, {}
     for p in items:
         missing = REQUIRED - set(p)
         if missing:
             raise SystemExit(f"{p.get('id')}: missing {missing}")
-        if c.execute("select 1 from posts where id=?", (p["id"],)).fetchone():
+        old = c.execute("select spec, status from posts where id=?", (p["id"],)).fetchone()
+        if old:
+            # edited before it went out: take the new spec and re-render (its slot gets re-planned)
+            if old["status"] in ("draft", "ready", "scheduled") and json.loads(old["spec"]) != p:
+                c.execute("update posts set spec=?, format=?, cluster=?, hook_pattern=?, status='draft', scheduled_at=null where id=?",
+                          (json.dumps(p), p["format"], p["cluster"], p["hook_pattern"], p["id"]))
+                updated += 1
             continue
         test = p.get("test")
         pair = p.get("pair") or (test["id"] if test else None)
@@ -72,7 +78,7 @@ def cmd_import(path):
                       (f"format-{pid}", "format", "same topic as typing reel vs carousel: which earns more sends+saves+follows per reach?",
                        json.dumps(arms), "score", 500, 48, "winner if score ratio >= 1.3 after both judged; else inconclusive"))
     c.commit()
-    log(f"imported {added} posts, {len(pairs)} format pairs, {len(tests)} pre-registered tests")
+    log(f"imported {added} posts ({updated} updated), {len(pairs)} format pairs, {len(tests)} pre-registered tests")
 
 
 def _render_one(p, out_dir):
@@ -295,6 +301,20 @@ def cmd_prune():
         log(f"pruned {n} old media folders")
 
 
+RENDER_V = "2"  # bump when screens/reels change so unpublished posts get the new look
+
+
+def _rerender_if_renderer_changed():
+    c = db.conn()
+    row = c.execute("select v from kv where k='render_v'").fetchone()
+    if (row["v"] if row else None) == RENDER_V:
+        return
+    n = c.execute("update posts set status='draft', scheduled_at=null where status in ('ready','scheduled')").rowcount
+    c.execute("insert or replace into kv(k, v) values('render_v', ?)", (RENDER_V,))
+    c.commit()
+    log(f"renderer v{RENDER_V}: {n} unpublished posts queued to re-render")
+
+
 def cmd_ci():
     """One GitHub Actions run: restore encrypted state, import content, tick, save state, push."""
     import os
@@ -310,6 +330,7 @@ def cmd_ci():
         os.environ["IG_ACCESS_TOKEN"] = tok
     for f in sorted((ROOT / "content").glob("*.json")):
         cmd_import(str(f))
+    _rerender_if_renderer_changed()
     if tok:
         cmd_tick()
     else:

@@ -105,6 +105,7 @@ def final_messages(p):
 def draw_header(d, th, name):
     d.rectangle((0, 0, W, 250), fill=th["header"])
     d.line((0, 250, W, 250), fill=th["line"], width=2)
+    S.status_bar(d, W, dark=th["bg"] == "black")
     d.text((40, 70), "‹", font=S.font("Regular", 72), fill=S.BLUE)
     cx, r = W // 2, 52
     d.ellipse((cx - r, 50, cx + r, 50 + 2 * r), fill=th["avatar"])
@@ -162,16 +163,33 @@ def draw_keyboard(d, th, top, pressed=None):
     kw, kh, gap = 92, 128, 14
     y = top + 24
     f = S.font("Regular", 48)
-    for row in KEY_ROWS:
+    for r, row in enumerate(KEY_ROWS):
         x = (W - (len(row) * kw + (len(row) - 1) * gap)) / 2
         for ch in row:
             d.rounded_rectangle((x, y, x + kw, y + kh), radius=12, fill=th["key_dn"] if pressed == ch else th["key"])
             d.text((x + kw / 2 - d.textlength(ch, font=f) / 2, y + 30), ch, font=f, fill=th["key_txt"])
             x += kw + gap
+        if r == 2:  # shift + delete, like a real keyboard
+            sx0, sx1 = 40, 150
+            d.rounded_rectangle((sx0, y, sx1, y + kh), radius=12, fill=th["key_fn"])
+            cx, cy = (sx0 + sx1) / 2, y + kh / 2
+            d.polygon([(cx, cy - 26), (cx - 26, cy + 2), (cx - 12, cy + 2), (cx - 12, cy + 24),
+                       (cx + 12, cy + 24), (cx + 12, cy + 2), (cx + 26, cy + 2)], outline=th["key_txt"], width=4)
+            dx0, dx1 = W - 150, W - 40
+            d.rounded_rectangle((dx0, y, dx1, y + kh), radius=12, fill=th["key_dn"] if pressed == "\b" else th["key_fn"])
+            cx = (dx0 + dx1) / 2
+            d.polygon([(cx - 34, cy), (cx - 16, cy - 20), (cx + 30, cy - 20), (cx + 30, cy + 20), (cx - 16, cy + 20)],
+                      outline=th["key_txt"], width=4)
+            d.line((cx - 2, cy - 9, cx + 16, cy + 9), fill=th["key_txt"], width=4)
+            d.line((cx - 2, cy + 9, cx + 16, cy - 9), fill=th["key_txt"], width=4)
         y += kh + 24
-    d.rounded_rectangle((250, y, W - 250, y + kh), radius=12, fill=th["key_dn"] if pressed == " " else th["key"])
-    d.rounded_rectangle((40, y, 230, y + kh), radius=12, fill=th["key_fn"])
-    d.rounded_rectangle((W - 230, y, W - 40, y + kh), radius=12, fill=th["key_fn"])
+    fs = S.font("Regular", 38)
+    for (x0, x1, label, key) in ((40, 230, "123", None), (250, W - 250, "space", " "), (W - 230, W - 40, "return", None)):
+        fill = th["key"] if key == " " else th["key_fn"]
+        if key and pressed == key:
+            fill = th["key_dn"]
+        d.rounded_rectangle((x0, y, x1, y + kh), radius=12, fill=fill)
+        d.text(((x0 + x1) / 2 - d.textlength(label, font=fs) / 2, y + 40), label, font=fs, fill=th["key_txt"])
 
 
 def compose(d, th, text, kb_top, cursor_on, dry=False, size=46):
@@ -232,6 +250,7 @@ def _draw_thread(d, th, items, y0, t, dry=False):
 def render_reel(p, out_dir: Path, seed=None):
     out_dir.mkdir(parents=True, exist_ok=True)
     th = THEMES[p.get("theme", "light")]
+    S.set_device(p)
     seed = seed if seed is not None else sum(map(ord, p["id"]))
     ev, total = build_timeline(p, seed)
     kb_top = H - 640
@@ -258,8 +277,10 @@ def render_reel(p, out_dir: Path, seed=None):
         t = fi / FPS
         while ei < len(ev) and ev[ei][0] <= t:
             _, kind, pl = ev[ei]
-            if kind in ("prefill", "del"):
+            if kind == "prefill":
                 text = pl
+            elif kind == "del":
+                text, pressed, pressed_until = pl, "\b", t + 0.06
             elif kind == "key":
                 text, ch = pl
                 pressed, pressed_until = ch.lower(), t + 0.08

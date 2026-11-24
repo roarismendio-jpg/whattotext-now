@@ -5,12 +5,13 @@ from . import screens as S
 
 def build_slides(p):
     fmt = p["format"]
+    S.set_device(p)
     slides = []
     if fmt == "copy_carousel":
         n = len(p["versions"])
         slides.append(S.notes_title_slide(p["hook"], sub=f"{n} versions you can copy  →"))
         for i, v in enumerate(p["versions"]):
-            slides.append(S.chat_slide(p.get("contact", ""), f"{i + 1} of {n} · {v['label']}", v["text"]))
+            slides.append(S.chat_slide(p.get("contact", ""), f"{i + 1} of {n} · {v['label']}", v["text"], context=v.get("context") or p.get("context")))
         if p.get("avoid"):
             slides.append(S.notes_body_slide("what not to say", p["avoid"]))
         slides.append(S.notes_body_slide("why these work", p["why"]))
@@ -30,8 +31,8 @@ def build_slides(p):
             slides.append(S.notes_body_slide(None, ch, footer=("source: " + p["source"]) if (last and p.get("source")) else None))
     elif fmt == "dont_send":
         slides.append(S.notes_title_slide(p["hook"], sub="swipe for what to send instead  →"))
-        slides.append(S.chat_slide(p.get("contact", ""), "don't send", p["bad"], strike=True, tag="don't", tag_color=S.RED))
-        slides.append(S.chat_slide(p.get("contact", ""), "send this instead", p["good"], tag="send this", tag_color=S.GREEN))
+        slides.append(S.chat_slide(p.get("contact", ""), "don't send", p["bad"], context=p.get("context"), strike=True, tag="don't", tag_color=S.RED))
+        slides.append(S.chat_slide(p.get("contact", ""), "send this instead", p["good"], context=p.get("context"), tag="send this", tag_color=S.GREEN))
         slides.append(S.notes_body_slide("why", p["why"]))
     elif fmt == "number_carousel":
         slides.append(S.number_slide(p["number"], p["stat"], p["source"]))

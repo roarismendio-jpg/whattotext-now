@@ -4,6 +4,7 @@ All carousel slides are 1080x1350 (4:5). Reels use 1080x1920.
 """
 from functools import lru_cache
 from pathlib import Path
+import re
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,6 +21,59 @@ AMBER = "#D49B00"
 RED = "#E5484D"
 GREEN = "#2E9E5B"
 HANDLE = "@whattotext.now"
+
+# ---------------- device state (status bar) ----------------
+# Every screen gets a real-looking status bar: a clock that fits the moment, a battery that
+# isn't full. Set per post with set_device(p) so no two posts look like the same template.
+DEVICE = {"clock": "11:42", "battery": 38, "date": "Today at 11:42 PM", "dark": False}
+
+
+def set_device(p):
+    import random as _r
+    rng = _r.Random(sum(map(ord, p.get("id", "x"))) * 7919)
+    stamps = [c.get("stamp", "") for c in p.get("context", []) if isinstance(c, dict)]
+    stamps += [o.get("stamp", "") for o in p.get("script", []) if isinstance(o, dict)]
+    m = None
+    for st in stamps:
+        m = re.search(r"(\d{1,2}):(\d{2})\s*(AM|PM)", st or "", re.I) or m
+    hm = re.search(r"\b(\d{1,2})\s*(am|pm)\b", p.get("hook", ""), re.I)
+    if m:
+        h12, mm, ap = int(m.group(1)), int(m.group(2)), m.group(3).upper()
+        mm = min(59, mm + rng.randint(0, 3))
+    elif hm:  # "the text to send at 2am" -> the phone says 2:xx
+        h12, mm, ap = int(hm.group(1)), rng.randint(3, 47), hm.group(2).upper()
+    else:
+        night = p.get("theme") == "dark" or "night" in (p.get("cluster", "") + p.get("hook", "")).lower()
+        h24 = rng.choice([23, 23, 0, 1, 22]) if night else rng.randint(8, 21)
+        mm = rng.randint(0, 59)
+        ap = "AM" if h24 < 12 else "PM"
+        h12 = h24 % 12 or 12
+    DEVICE["clock"] = f"{h12}:{mm:02d}"
+    DEVICE["date"] = f"Today at {h12}:{mm:02d} {ap}"
+    DEVICE["battery"] = rng.choice([rng.randint(9, 34), rng.randint(35, 88)])
+    DEVICE["dark"] = p.get("theme") == "dark"
+    return DEVICE
+
+
+def status_bar(d, W, dark=None):
+    dark = DEVICE["dark"] if dark is None else dark
+    c = "white" if dark else INK
+    f = font("SemiBold", 34)
+    d.text((70, 18), DEVICE["clock"], font=f, fill=c)
+    y = 40
+    x = W - 262  # signal bars
+    for i in range(4):
+        h = 9 + i * 6
+        d.rounded_rectangle((x + i * 13, y + 10 - h, x + i * 13 + 8, y + 10), radius=2, fill=c)
+    cx, cy = W - 168, y + 10  # wifi: three arcs + dot
+    for r in (24, 16, 8):
+        d.arc((cx - r, cy - r - 2, cx + r, cy + r - 2), 225, 315, fill=c, width=5)
+    b = DEVICE["battery"]
+    bx, by = W - 124, y - 14  # battery
+    d.rounded_rectangle((bx, by, bx + 54, by + 26), radius=7, outline=c if not dark else "#8E8E93", width=3)
+    d.rounded_rectangle((bx + 57, by + 8, bx + 61, by + 18), radius=2, fill=c if not dark else "#8E8E93")
+    fill = RED if b < 20 else c
+    d.rounded_rectangle((bx + 5, by + 5, bx + 5 + max(4, int(44 * b / 100)), by + 21), radius=3, fill=fill)
 
 
 @lru_cache(maxsize=64)
@@ -74,18 +128,20 @@ def handle_mark(d, W, H, color=GRAY):
 
 # ---------------- Notes ----------------
 
-def notes_header(d, W, date_str="Today at 11:42 PM"):
-    d.text((54, 58), "‹ Notes", font=font("Regular", 38), fill=AMBER)
+def notes_header(d, W, date_str=None):
+    date_str = date_str or DEVICE["date"]
+    status_bar(d, W, dark=False)
+    d.text((54, 96), "‹ Notes", font=font("Regular", 38), fill=AMBER)
     # share + more icons (simple shapes)
-    d.ellipse((W - 150, 62, W - 112, 100), outline=AMBER, width=4)
+    d.ellipse((W - 150, 100, W - 112, 138), outline=AMBER, width=4)
     for i in range(3):
-        d.ellipse((W - 88 + i * 16, 78, W - 80 + i * 16, 86), fill=AMBER)
+        d.ellipse((W - 88 + i * 16, 116, W - 80 + i * 16, 124), fill=AMBER)
     f = font("Regular", 26)
     tw = d.textlength(date_str, font=f)
-    d.text(((W - tw) / 2, 150), date_str, font=f, fill=GRAY)
+    d.text(((W - tw) / 2, 186), date_str, font=f, fill=GRAY)
 
 
-def notes_title_slide(title, sub=None, W=1080, H=1350, date_str="Today at 11:42 PM"):
+def notes_title_slide(title, sub=None, W=1080, H=1350, date_str=None):
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
     notes_header(d, W, date_str)
@@ -101,7 +157,7 @@ def notes_title_slide(title, sub=None, W=1080, H=1350, date_str="Today at 11:42 
     return img
 
 
-def notes_body_slide(heading, items, numbered=False, W=1080, H=1350, footer=None, date_str="Today at 11:42 PM"):
+def notes_body_slide(heading, items, numbered=False, W=1080, H=1350, footer=None, date_str=None):
     """items: list of strings; rendered as a note with optional heading."""
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
@@ -143,6 +199,7 @@ def notes_body_slide(heading, items, numbered=False, W=1080, H=1350, footer=None
 def chat_header(d, W, name, top=0, height=250):
     d.rectangle((0, top, W, top + height), fill="#F6F6F6")
     d.line((0, top + height, W, top + height), fill=LINE, width=2)
+    status_bar(d, W, dark=False)
     d.text((40, top + 70), "‹", font=font("Regular", 72), fill=BLUE)
     cx = W // 2
     r = 52
@@ -247,13 +304,14 @@ def mail_slide(label, subject, body, W=1080, H=1350, to="professor"):
     img = Image.new("RGB", (W, H), "white")
     d = ImageDraw.Draw(img)
     d.rectangle((0, 0, W, 170), fill="#F6F6F6")
-    d.text((44, 70), "Cancel", font=font("Regular", 36), fill=BLUE)
+    status_bar(d, W, dark=False)
+    d.text((44, 86), "Cancel", font=font("Regular", 36), fill=BLUE)
     f = font("SemiBold", 38)
     t = "New Message"
-    d.text(((W - d.textlength(t, font=f)) / 2, 68), t, font=f, fill=INK)
-    d.ellipse((W - 110, 56, W - 40, 126), fill=BLUE)
-    d.polygon([(W - 75, 74), (W - 92, 96), (W - 58, 96)], fill="white")
-    d.line((W - 75, 92, W - 75, 112), fill="white", width=6)
+    d.text(((W - d.textlength(t, font=f)) / 2, 84), t, font=f, fill=INK)
+    d.ellipse((W - 104, 80, W - 46, 138), fill=BLUE)
+    d.polygon([(W - 75, 94), (W - 90, 112), (W - 60, 112)], fill="white")
+    d.line((W - 75, 108, W - 75, 126), fill="white", width=6)
     y = 190
     if label:
         fl = font("SemiBold", 26)

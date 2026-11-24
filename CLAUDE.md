@@ -37,6 +37,10 @@ Affirmations, "gentle reminder", "you're allowed", "it's okay to not be okay", "
 Rules that apply to every format:
 - Slide 1 / the first second shows the situation, not the brand. Put the hook in words people search for ("what to text when…", "how to say no to…").
 - Typing reels must include one realistic first draft that gets deleted (`{"d": n}`). The hesitation is the human part.
+- Every chat screen needs a lived-in thread: give each copy/dont_send post a `context` (the message from them that we're answering, or the last message weeks ago with a `stamp` like "Oct 12", which tells the story by itself). Never an empty chat with only our bubble.
+- Put real times in stamps and hooks ("at 2am", "Today 11:58 PM"); the phone's clock in the status bar follows them.
+- Vary filler words across a batch. Don't let "honestly", "!!" or "lol" land in more than a few posts per week.
+- Never write "made with AI" or similar on the account; the bio stays "the exact words for hard moments. copy, paste, send."
 - Captions: 1–3 short lines, one line of extra insight, an ask ("send this to…" / "save this for…" / a question), max 3 hashtags.
 - Heavy topics (someone struggling, crisis, grief) must name a real resource: "call or text 988 (US)".
 - Sources go in the caption (name, year). Never invent numbers.

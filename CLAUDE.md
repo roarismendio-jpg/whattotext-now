@@ -55,7 +55,7 @@ Lean on the calendar: finals (early–mid Dec), going home for break, holidays a
 
 ## How the machine runs (run.py on cron every 15 min)
 - `render` → drafts become media hosted on GitHub Pages.
-- `plan` → fills 3 regular slots a day (12:10, 17:40, 21:30 CT). Once followers ≥ 200, it also fills 3 trial-reel slots a day (only `typing_reel`), graduated automatically by Instagram if they perform (`SS_PERFORMANCE`).
+- `plan` → fills 3 regular slots a day (12:10, 17:40, 21:30 CT). Once followers ≥ 200, it also fills 5 trial-reel slots a day (the max we run) (only `typing_reel`), graduated automatically by Instagram if they perform (`SS_PERFORMANCE`).
 - Selection is explore/exploit: arms = format × hook pattern. 30% of slots go to the least-tested arms and 70% to arms sampled by expected score.
 - `insights` every 3h; a post is **judged** after 48h and ≥500 reach (≥300 for trials).
 - **Score** = (shares×3 + saves×2 + follows×10 + comments + likes×0.5) per 1,000 reach, with reels multiplied by (1 − 0.5 × skip rate).

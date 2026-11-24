@@ -1,12 +1,24 @@
-"""Instagram API with Instagram Login (graph.instagram.com). Official endpoints only:
-publishing (incl. trial reels), insights, comments moderation. No follow/like/DM automation.
+"""Official Instagram Graph API. Works with either token type Meta issues:
+- Instagram-login user token ("IGAA..."): graph.instagram.com, refreshed every 6 days.
+- Business/system-user token ("EAA...", new apps since 2026, never expires): graph.facebook.com,
+  addressed by the Instagram account's ID (IG_USER_ID, auto-discovered from the token).
+Publishing (incl. trial reels), insights, comment moderation. No follow/like/DM automation.
 """
 import json
 import time
 import requests
 from . import config
 
-BASE = "https://graph.instagram.com"
+IG_BASE, FB_BASE = "https://graph.instagram.com", "https://graph.facebook.com"
+_ig_id_cache = {}
+
+
+def _is_ig_login_token():
+    return _tok().startswith("IG")
+
+
+def _base():
+    return IG_BASE if _is_ig_login_token() else FB_BASE
 
 
 class IGError(Exception):
@@ -14,7 +26,7 @@ class IGError(Exception):
 
 
 def _url(path):
-    return f"{BASE}/{config.GRAPH}/{path}"
+    return f"{_base()}/{config.GRAPH}/{path}"
 
 
 def _tok():
@@ -22,7 +34,21 @@ def _tok():
 
 
 def _me():
-    return config.get("IG_USER_ID", "me")
+    explicit = config.get("IG_USER_ID", "")
+    if explicit:
+        return explicit
+    if _is_ig_login_token():
+        return "me"
+    tok = _tok()
+    if tok not in _ig_id_cache:  # business token: find the Instagram account it was granted
+        j = _check(requests.get(f"{FB_BASE}/{config.GRAPH}/debug_token",
+                                params={"input_token": tok, "access_token": tok}, timeout=30))
+        ids = [t for g in j.get("data", {}).get("granular_scopes", []) if g.get("scope", "").startswith("instagram")
+               for t in g.get("target_ids", [])]
+        if not ids:
+            raise IGError("token has no Instagram account attached; set IG_USER_ID")
+        _ig_id_cache[tok] = ids[0]
+    return _ig_id_cache[tok]
 
 
 def _check(r):
@@ -44,7 +70,9 @@ def post(path, data=None):
 
 
 def account():
-    return get("me", {"fields": "user_id,username,followers_count,media_count"})
+    if _is_ig_login_token():
+        return get("me", {"fields": "user_id,username,followers_count,media_count"})
+    return get(_me(), {"fields": "id,username,followers_count,media_count"})
 
 
 def quota():
@@ -135,7 +163,9 @@ def hide(comment_id):
 
 
 def refresh_token():
-    r = requests.get(f"{BASE}/refresh_access_token",
+    if not _is_ig_login_token():
+        return "never (business token)"
+    r = requests.get(f"{IG_BASE}/refresh_access_token",
                      params={"grant_type": "ig_refresh_token", "access_token": _tok()}, timeout=30)
     j = _check(r)
     config.set_value("IG_ACCESS_TOKEN", j["access_token"])

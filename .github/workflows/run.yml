@@ -11,7 +11,9 @@ concurrency:
 jobs:
   tick:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    # GitHub's cron fires only every few hours on a new repo, so each run stays alive and ticks every
+    # 10 minutes for ~5.6h; the next scheduled/queued run takes over when it ends (concurrency queues it).
+    timeout-minutes: 350
     env:
       TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -32,8 +34,13 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           pip install -q -r requirements.txt
-      - name: run engine
+      - name: run engine (tick every 10 min)
         run: |
           git config user.name "whattotext-bot"
           git config user.email "actions@users.noreply.github.com"
-          python3 run.py ci
+          end=$(( $(date +%s) + 335*60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            git pull -q --rebase origin main || true
+            python3 run.py ci || echo "tick failed, continuing"
+            sleep 600
+          done

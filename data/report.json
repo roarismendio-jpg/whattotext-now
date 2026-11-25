@@ -112,8 +112,13 @@
     }
   ],
   "backlog_ready": 64,
-  "scheduled": 14,
-  "failed": [],
+  "scheduled": 13,
+  "failed": [
+    {
+      "id": "b2r09",
+      "error": "{\"message\": \"API access blocked.\", \"code\": 200, \"type\": \"OAuthException\", \"error_subcode\": 5258005, \"fbtrace_id\": \"ABMx7mDYGuVB4s45fGJhlmM\"}"
+    }
+  ],
   "comment_safety": {},
   "used_hooks": [
     "the text to send when a friend's gone quiet",

@@ -133,7 +133,15 @@ def cmd_publish(dry=False):
     since = (now() - timedelta(hours=24)).isoformat()
     regular_24h = c.execute("select count(*) n from posts where status='published' and kind='regular' and published_at > ?",
                             (since,)).fetchone()["n"]
-    for row in due[:2]:  # at most 2 per tick, keeps a natural rhythm
+    late_cut = (now() - timedelta(hours=3)).isoformat()
+    for row in [r for r in due if r["scheduled_at"] < late_cut]:
+        # a slot missed by 3h+ (runner delay, posting switched off) goes back to the pool instead of
+        # bursting out several posts at once; `plan` gives it a fresh slot
+        c.execute("update posts set status='ready', scheduled_at=null where id=?", (row["id"],))
+        log(f"{row['id']} missed its slot ({row['scheduled_at']}); re-queued")
+    c.commit()
+    due = [r for r in due if r["scheduled_at"] >= late_cut]
+    for row in due[:1]:  # one per tick keeps a natural rhythm
         p = db.spec(row)
         if row["kind"] == "regular" and regular_24h >= config.MAX_REGULAR_PER_DAY:
             log(f"daily regular cap reached; {row['id']} waits")

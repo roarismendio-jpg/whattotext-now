@@ -122,12 +122,27 @@ def cmd_preview(path):
 
 # ---------- publish ----------
 
+def _account_problem(msg):
+    m = msg.lower()
+    return ("api access blocked" in m or "error validating access token" in m or '"code": 190' in m
+            or '"code": 200' in m or "checkpoint" in m or "restricted" in m)
+
+
 def cmd_publish(dry=False):
     import os
     from engine import ig
     if os.environ.get("PUBLISH", "on") != "on":
         dry = True  # publishing switched off (repo variable PUBLISH != on)
     c = db.conn()
+    # posts that failed only because the account was blocked go back to the pool
+    for r in c.execute("select id, error from posts where status='failed'").fetchall():
+        if r["error"] and _account_problem(r["error"]):
+            c.execute("update posts set status='ready', scheduled_at=null where id=?", (r["id"],))
+    blocked = db.kv_get(c, "publish_blocked_until")
+    if blocked and blocked > now().isoformat():
+        log(f"publishing paused until {blocked} (account/app blocked)")
+        c.commit()
+        return
     due = c.execute("select * from posts where status='scheduled' and scheduled_at <= ? order by scheduled_at",
                     (datetime.now(planner.TZ).isoformat(),)).fetchall()
     since = (now() - timedelta(hours=24)).isoformat()
@@ -168,6 +183,12 @@ def cmd_publish(dry=False):
                 c.execute("update posts set status='ready', scheduled_at=null, kind='regular', error=? where id=?", (msg[:1000], row["id"]))
                 db.kv_set(c, "trials_blocked_until", (now() + timedelta(days=1)).isoformat())
                 log(f"trial rejected for {row['id']}, back to backlog: {msg[:160]}")
+            elif _account_problem(msg):
+                # the account/app is blocked or the token is bad: the post is fine, keep it and pause publishing
+                c.execute("update posts set status='ready', scheduled_at=null, error=? where id=?", (msg[:1000], row["id"]))
+                db.kv_set(c, "publish_blocked_until", (now() + timedelta(hours=1)).isoformat())
+                log(f"ACCOUNT BLOCKED, publishing paused 1h ({row['id']} kept): {msg[:200]}")
+                break
             else:
                 c.execute("update posts set status='failed', error=? where id=?", (msg[:1000], row["id"]))
                 log(f"publish FAILED {row['id']}: {msg[:200]}")

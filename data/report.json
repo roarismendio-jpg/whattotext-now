@@ -1,6 +1,11 @@
 {
   "followers_now": 0,
-  "followers_last_30": [],
+  "followers_last_30": [
+    {
+      "date": "2026-11-25",
+      "count": 0
+    }
+  ],
   "phase": "pre-200 (regular only)",
   "published_window": 0,
   "arms_all_time": {},
@@ -106,8 +111,8 @@
       "result": null
     }
   ],
-  "backlog_ready": 67,
-  "scheduled": 11,
+  "backlog_ready": 69,
+  "scheduled": 9,
   "failed": [],
   "comment_safety": {},
   "used_hooks": [

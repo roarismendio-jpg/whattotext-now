@@ -106,8 +106,8 @@
       "result": null
     }
   ],
-  "backlog_ready": 70,
-  "scheduled": 8,
+  "backlog_ready": 67,
+  "scheduled": 11,
   "failed": [],
   "comment_safety": {},
   "used_hooks": [

@@ -16,7 +16,7 @@ jobs:
       TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
-      PUBLISH: ${{ vars.PUBLISH }}
+      PUBLISH: ${{ vars.PAUSE == 'yes' && 'off' || 'on' }}  # live; set repo variable PAUSE=yes to stop posting
       MEDIA_BASE_URL: https://roarismendio-jpg.github.io/whattotext-now
       MEDIA_REPO_DIR: .
       TIMEZONE: America/Chicago

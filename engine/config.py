@@ -43,8 +43,8 @@ def set_value(key, value):
 TZ = get("TIMEZONE", "America/Chicago")
 GRAPH = get("GRAPH_VERSION", "v24.0")
 REGULAR_SLOTS = [s.strip() for s in get("REGULAR_SLOTS", "12:10,17:40,21:30").split(",")]
-TRIAL_SLOTS = [s.strip() for s in get("TRIAL_SLOTS", "10:20,14:50,19:05,22:40,23:55").split(",")]
-TRIALS_PER_DAY = int(get("TRIALS_PER_DAY", "5"))
+TRIAL_SLOTS = [s.strip() for s in get("TRIAL_SLOTS", "08:40,10:20,12:55,14:50,16:25,19:05,22:40,23:55").split(",")]
+TRIALS_PER_DAY = int(get("TRIALS_PER_DAY", "8"))
 TRIAL_MIN_FOLLOWERS = int(get("TRIAL_MIN_FOLLOWERS", "200"))
 MAX_REGULAR_PER_DAY = int(get("MAX_REGULAR_PER_DAY", "3"))
 EXPLORE_SHARE = float(get("EXPLORE_SHARE", "0.3"))

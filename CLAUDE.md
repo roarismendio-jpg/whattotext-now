@@ -55,7 +55,7 @@ Lean on the calendar: finals (early–mid Dec), going home for break, holidays a
 
 ## How the machine runs (run.py on cron every 15 min)
 - `render` → drafts become media hosted on GitHub Pages.
-- `plan` → fills 3 regular slots a day (12:10, 17:40, 21:30 CT). Once followers ≥ 200, it also fills 5 trial-reel slots a day (the max we run) (only `typing_reel`), graduated automatically by Instagram if they perform (`SS_PERFORMANCE`).
+- `plan` → fills 3 regular slots a day (12:10, 17:40, 21:30 CT). Once followers ≥ 200, it also fills 8 trial-reel slots a day (only `typing_reel`), graduated automatically by Instagram if they perform (`SS_PERFORMANCE`).
 - Selection is explore/exploit: arms = format × hook pattern. 30% of slots go to the least-tested arms and 70% to arms sampled by expected score.
 - `insights` every 3h; a post is **judged** after 48h and ≥500 reach (≥300 for trials).
 - **Score** = (shares×3 + saves×2 + follows×10 + comments + likes×0.5) per 1,000 reach, with reels multiplied by (1 − 0.5 × skip rate).
@@ -66,7 +66,7 @@ Lean on the calendar: finals (early–mid Dec), going home for break, holidays a
 1. `python3 run.py insights`, then `python3 run.py report --json`. Read the arms, winners, bottom posts, tests, backlog, used hooks and comment safety counts.
 2. Write 3–6 dated bullets to `learnings.md` (what won, what lost, by how much, with n). Don't conclude from n < 3.
 3. Write next week's batch to `content/batchNN.json`:
-   - **Volume:** enough to keep ≥ 14 days of runway: 21 regular posts, plus 21 typing reels for trials once the trial phase is on.
+   - **Volume:** enough to keep ≥ 14 days of runway: 21 regular posts, plus 56 typing reels for trials once the trial phase is on (8 a day; trials only reach non-followers, so volume is how we learn).
    - **Mix:** about 50% from the top 2 arms, 20% remixes of each flagged winner (2–3 variants each: same situation, new hook wording or new format; never a copy), and 30% exploration (new clusters, new patterns, new formats).
    - **Pre-register 2–4 tests:** give each test's posts the same `pair` id and change ONE variable. Write the hypothesis in `notes`.
    - **No repeats:** check `used_hooks` so you never repeat a hook.

@@ -47,5 +47,14 @@ TRIAL_SLOTS = [s.strip() for s in get("TRIAL_SLOTS", "08:40,10:20,12:55,14:50,16
 TRIALS_PER_DAY = int(get("TRIALS_PER_DAY", "8"))
 TRIAL_MIN_FOLLOWERS = int(get("TRIAL_MIN_FOLLOWERS", "200"))
 MAX_REGULAR_PER_DAY = int(get("MAX_REGULAR_PER_DAY", "3"))
+# launch boost: until the grid has LAUNCH_POSTS posts, add these slots so a profile visitor sees a full grid fast
+LAUNCH_POSTS = int(get("LAUNCH_POSTS", "9"))
+LAUNCH_SLOTS = [s.strip() for s in get("LAUNCH_SLOTS", "14:25,19:50").split(",")]
+
+
+def regular_slots(published_count):
+    if published_count < LAUNCH_POSTS:
+        return sorted(REGULAR_SLOTS + LAUNCH_SLOTS)
+    return REGULAR_SLOTS[:MAX_REGULAR_PER_DAY]
 EXPLORE_SHARE = float(get("EXPLORE_SHARE", "0.3"))
 AI_LABEL = get("AI_LABEL_SYNTHETIC_MEDIA", "false").lower() == "true"

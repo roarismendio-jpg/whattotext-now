@@ -144,7 +144,8 @@ def cmd_publish(dry=False):
     due = [r for r in due if not is_late(r)]
     for row in due[:1]:  # one per tick keeps a natural rhythm
         p = db.spec(row)
-        if row["kind"] == "regular" and regular_24h >= config.MAX_REGULAR_PER_DAY:
+        n_pub = c.execute("select count(*) n from posts where status='published' and kind='regular'").fetchone()["n"]
+        if row["kind"] == "regular" and regular_24h >= len(config.regular_slots(n_pub)):
             log(f"daily regular cap reached; {row['id']} waits")
             continue
         urls = json.loads(row["media_urls"] or "[]")

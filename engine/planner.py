@@ -102,13 +102,14 @@ def plan(c, days=2, seed=None):
     stats = arm_stats(judged(c))
     followers = db.follower_count(c)
     trials_on = followers >= config.TRIAL_MIN_FOLLOWERS
+    n_pub = c.execute("select count(*) n from posts where status='published' and kind='regular'").fetchone()["n"]
     planned = []
     today = datetime.now(TZ).date()
     for dd in range(days + 1):
         day = (today + timedelta(days=dd)).isoformat()
         taken = {r["scheduled_at"] for r in c.execute("select scheduled_at from posts where scheduled_at like ?", (f"{day}%",))}
         used_pairs = {r["pair"] for r in c.execute("select pair from posts where scheduled_at like ? and pair is not null", (f"{day}%",))}
-        jobs = [("regular", t) for t in _slot_times(day, config.REGULAR_SLOTS[:config.MAX_REGULAR_PER_DAY])]
+        jobs = [("regular", t) for t in _slot_times(day, config.regular_slots(n_pub))]
         if trials_on:
             jobs += [("trial", t) for t in _slot_times(day, config.TRIAL_SLOTS[:config.TRIALS_PER_DAY])]
         for kind, t in jobs:

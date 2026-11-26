@@ -7,7 +7,7 @@
     }
   ],
   "phase": "pre-200 (regular only)",
-  "published_window": 0,
+  "published_window": 1,
   "arms_all_time": {},
   "arms_by_cluster": {},
   "winners_to_remix": [],

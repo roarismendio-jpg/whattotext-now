@@ -132,7 +132,7 @@
     }
   ],
   "backlog_ready": 63,
-  "scheduled": 11,
+  "scheduled": 10,
   "failed": [],
   "comment_safety": {},
   "used_hooks": [

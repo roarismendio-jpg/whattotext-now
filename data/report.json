@@ -7,11 +7,31 @@
     }
   ],
   "phase": "pre-200 (regular only)",
-  "published_window": 3,
+  "published_window": 4,
   "arms_all_time": {},
   "arms_by_cluster": {},
   "winners_to_remix": [],
-  "top_window": [],
+  "top_window": [
+    {
+      "id": "r05",
+      "format": "typing_reel",
+      "hook_pattern": "text_to_send_when",
+      "cluster": "Home & family",
+      "kind": "regular",
+      "pair": null,
+      "published_at": "2026-11-27T01:52:18.587039+00:00",
+      "permalink": "https://www.instagram.com/reel/DgOiryrSkgs/",
+      "reach": 119,
+      "views": 150,
+      "shares": 0,
+      "saves": 0,
+      "follows": null,
+      "skip_rate": 63.9,
+      "score": 0.0,
+      "judged": false,
+      "hook": "the text to send your parents before you come home for break"
+    }
+  ],
   "bottom_window": [],
   "tests": [
     {

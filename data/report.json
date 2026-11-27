@@ -7,7 +7,7 @@
     }
   ],
   "phase": "pre-200 (regular only)",
-  "published_window": 1,
+  "published_window": 3,
   "arms_all_time": {},
   "arms_by_cluster": {},
   "winners_to_remix": [],
@@ -112,7 +112,7 @@
     }
   ],
   "backlog_ready": 63,
-  "scheduled": 13,
+  "scheduled": 12,
   "failed": [],
   "comment_safety": {},
   "used_hooks": [

@@ -3,6 +3,9 @@ on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch: {}
+  push:  # a push touching .kick starts the engine right away (pushes made by the engine itself never trigger runs)
+    branches: [main]
+    paths: [".kick"]
 permissions:
   contents: write
   actions: write

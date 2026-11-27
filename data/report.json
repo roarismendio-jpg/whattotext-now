@@ -11,11 +11,30 @@
     }
   ],
   "phase": "pre-200 (regular only)",
-  "published_window": 6,
+  "published_window": 7,
   "arms_all_time": {},
   "arms_by_cluster": {},
   "winners_to_remix": [],
   "top_window": [
+    {
+      "id": "r02",
+      "format": "typing_reel",
+      "hook_pattern": "how_to_say_no",
+      "cluster": "Money",
+      "kind": "regular",
+      "pair": "P2",
+      "published_at": "2026-11-27T20:37:53.676590+00:00",
+      "permalink": "https://www.instagram.com/reel/DgQjgd8NWm-/",
+      "reach": 125,
+      "views": 186,
+      "shares": 0,
+      "saves": 0,
+      "follows": null,
+      "skip_rate": 50.0,
+      "score": 3.0,
+      "judged": false,
+      "hook": "how to say no to the group trip you can't afford"
+    },
     {
       "id": "r05",
       "format": "typing_reel",

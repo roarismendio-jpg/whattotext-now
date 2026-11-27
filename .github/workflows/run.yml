@@ -5,6 +5,7 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: engine
   cancel-in-progress: false
@@ -44,3 +45,8 @@ jobs:
             python3 run.py ci || echo "tick failed, continuing"
             sleep 600
           done
+      - name: hand off to the next run (no gap between runs)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run run.yml --ref main -R ${{ github.repository }}

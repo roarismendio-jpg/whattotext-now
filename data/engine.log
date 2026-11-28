@@ -1,7 +1,3 @@
-2026-11-26 01:48 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 01:58 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 01:58 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 02:08 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 02:08 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 02:18 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 02:18 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
@@ -398,3 +394,7 @@
 2026-11-27 19:31 dashboard -> /home/runner/work/whattotext-now/whattotext-now/data/dashboard.html
 2026-11-27 19:41 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-27 19:41 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-27 19:51 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-27 19:51 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-27 19:51 daily regular cap reached; r08 waits
+2026-11-27 19:51 report error: '<' not supported between instances of 'NoneType' and 'NoneType'

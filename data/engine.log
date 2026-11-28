@@ -1,10 +1,3 @@
-2026-11-26 13:34 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 13:34 dashboard -> /home/runner/work/whattotext-now/whattotext-now/data/dashboard.html
-2026-11-26 13:44 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 13:44 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 13:54 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 13:54 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 14:04 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 14:04 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 14:14 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 14:14 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
@@ -398,3 +391,10 @@
 2026-11-27 23:55 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-27 23:55 daily regular cap reached; x02 waits
 2026-11-27 23:55 report error: '<' not supported between instances of 'NoneType' and 'float'
+2026-11-28 00:05 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-28 00:05 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-28 00:05 planned regular x03 at 2026-11-30T12:10
+2026-11-28 00:05 planned regular b2t02 at 2026-11-30T17:40
+2026-11-28 00:05 planned regular c02 at 2026-11-30T21:30
+2026-11-28 00:05 daily regular cap reached; x02 waits
+2026-11-28 00:05 report error: '<' not supported between instances of 'NoneType' and 'float'

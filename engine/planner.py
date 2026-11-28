@@ -12,6 +12,20 @@ from . import config, db
 TZ = ZoneInfo(config.TZ)
 MIN_REACH = {"regular": 500, "trial": 300}
 JUDGE_AFTER_H = 48
+# cold start: a tiny account rarely hits 500 reach, which would leave the bandit blind. Until 500 followers,
+# judge sooner and at a lower bar; zero-reach posts still count (that IS the signal: the format didn't travel).
+EARLY_MIN_REACH = {"regular": 0, "trial": 50}
+EARLY_JUDGE_AFTER_H = 24
+
+
+def _bars(c):
+    row = c.execute("select count from followers order by date desc limit 1").fetchone() if _has_followers(c) else None
+    f = (row[0] if row else 0) or 0
+    return (EARLY_MIN_REACH, EARLY_JUDGE_AFTER_H) if f < 500 else (MIN_REACH, JUDGE_AFTER_H)
+
+
+def _has_followers(c):
+    return c.execute("select 1 from sqlite_master where type='table' and name='followers'").fetchone() is not None
 REEL_FORMATS = {"typing_reel", "thread_reel"}
 
 
@@ -34,12 +48,13 @@ def score(m, fmt):
 def judged(c):
     """Published posts old enough and with enough reach to count. Returns list of dicts."""
     out = []
+    min_reach, after_h = _bars(c)
     for p in c.execute("select * from posts where status='published'"):
         pub = datetime.fromisoformat(p["published_at"])
         m = db.latest_metrics(c, p["id"])
         if not m:
             continue
-        ready = (now() - pub) >= timedelta(hours=JUDGE_AFTER_H) and (m["reach"] or 0) >= MIN_REACH[p["kind"]]
+        ready = (now() - pub) >= timedelta(hours=after_h) and (m["reach"] or 0) >= min_reach[p["kind"]]
         out.append({"id": p["id"], "format": p["format"], "hook_pattern": p["hook_pattern"], "cluster": p["cluster"],
                     "kind": p["kind"], "pair": p["pair"], "published_at": p["published_at"], "permalink": p["permalink"],
                     "reach": m["reach"], "views": m["views"], "shares": m["shares"], "saves": m["saves"],

@@ -1,7 +1,3 @@
-2026-11-26 10:02 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 10:12 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 10:12 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
-2026-11-26 10:22 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 10:22 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 10:32 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-26 10:32 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
@@ -398,3 +394,7 @@
 2026-11-27 22:03 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
 2026-11-27 22:03 daily regular cap reached; x02 waits
 2026-11-27 22:03 report error: '<' not supported between instances of 'NoneType' and 'float'
+2026-11-27 22:13 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-27 22:13 imported 0 posts (0 updated), 0 format pairs, 0 pre-registered tests
+2026-11-27 22:13 daily regular cap reached; x02 waits
+2026-11-27 22:13 report error: '<' not supported between instances of 'NoneType' and 'float'
